@@ -1,0 +1,225 @@
+<table>
+                      <title><input type="text" name=""/></title>
+                      <input type="date" name=""/>
+                      <h2>Test Protocol</h2>
+                      <tr>
+                        <th>Treatment</th>
+                        <th>Harvesting solution</th>
+                        <th>Post grading</th>
+                        <th>Packaging & Transport</th>
+                        <th>Store</th>
+                        <th>Consumer</th>
+                        <th>Vase Nrs</th>
+                      </tr>
+
+                      <tr>
+                        <th>1</th>
+                        <td><input type="text" name=""/></td>
+                        <td><input type="text" name=""/></td>
+                        <td>Dry in a box</td>
+                        <td><input type="text" name=""/></td>
+                        <td><input type="text" name=""/></td>
+                        <td><input type="text" name=""/></td>
+                      </tr>
+
+                    </table>
+
+import React from "react";
+
+export const  App = () => {
+  conststate = {
+    rows: [{}]
+  };
+  handleChange = idx => e => {
+    const { name, value } = e.target;
+    const rows = [...this.state.rows];
+    rows[idx] = {
+      [name]: value
+    };
+    this.setState({
+      rows
+    });
+  };
+  handleAddRow = () => {
+    const item = {
+      name: "",
+      mobile: ""
+    };
+    this.setState({
+      rows: [...this.state.rows, item]
+    });
+  };
+  handleRemoveRow = () => {
+    this.setState({
+      rows: this.state.rows.slice(0, -1)
+    });
+  };
+  handleRemoveSpecificRow = (idx) => () => {
+    const rows = [...this.state.rows]
+    rows.splice(idx, 1)
+    this.setState({ rows })
+  }
+  render() {
+    return (
+      <div>
+        <div className="container">
+          <div className="row clearfix">
+            <div className="col-md-12 column">
+              <table
+                className="table table-bordered table-hover"
+                id="tab_logic"
+              >
+                <thead>
+                  <tr>
+                    <th className="text-center"> # </th>
+                    <th className="text-center"> Name </th>
+                    <th className="text-center"> Mobile </th>
+                    <th />
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.rows.map((item, idx) => (
+                    <tr id="addr0" key={idx}>
+                      <td>{idx}</td>
+                      <td>
+                        <input
+                          type="text"
+                          name="name"
+                          value={this.state.rows[idx].name}
+                          onChange={this.handleChange(idx)}
+                          className="form-control"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          name="mobile"
+                          value={this.state.rows[idx].mobile}
+                          onChange={this.handleChange(idx)}
+                          className="form-control"
+                        />
+                      </td>
+                      <td>
+                        <button
+                          className="btn btn-outline-danger btn-sm"
+                          onClick={this.handleRemoveSpecificRow(idx)}
+                        >
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <button onClick={this.handleAddRow} className="btn btn-primary">
+                Add Row
+              </button>
+              <button
+                onClick={this.handleRemoveRow}
+                className="btn btn-danger float-right"
+              >
+                Delete Last Row
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById("root"));
+
+
+/*
+<option>Alstroemeria</option>
+                          <option>Asters</option>
+                          <option>Astrantia</option>
+                          <option>Carnations</option>
+                          <option>Chrysanthemum</option>
+                          <option>Delphinium</option>
+                          <option>Eryngium</option>
+                          <option>Gypsophila</option>
+                          <option>Hydrangea</option>
+                          <option>Lepidium</option>
+                          <option>Lily</option>
+                          <option>Limonium</option>
+                          <option>Mathiola</option>
+                          <option>Onis</option>
+                          <option>Phlox</option>
+                          <option>Roses</option>
+                          <option>Snapdragon</option>
+                          <option>Solidago</option>
+                          <option>Stokisia</option>
+                          <option>Scabiosa</option>
+                          <option></option>
+                          <option></option>
+//* {
+  background-color: skyblue;
+}
+
+.app {
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  font-family: 'Kanit', sans-serif;
+  background-color: #f8f9fd;
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #01d28e;
+  border: 1px solid #01d28e;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+input[type="submit"]:hover {
+  background: #6cf0c2;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.login-form {
+  background-color: white;
+  padding: 10rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.list-container {
+  display: flex;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0px;
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+.pdfdoc {
+	padding: 3rem;
+	overflow: auto;
+	font-family: 'Arimo', sans-serif;
+}
+
+.pdfdoc .space {
+	margin-top: 6rem;
+}
+
+.pdfdoc h1,h2 {
+	font: bold;
+	font-weight: 700;
+	font-style: italic;
+	padding: .2rem;
+}
+
+.pdfdoc h4,h3,h5 {
+	font: bold;
+	font-weight: 600;
+	padding: .2rem;	
+}
+
+.pdfdoc #h2 {
+	border-bottom: 1px solid blue;
+	margin-left: 6rem;
+	width: 75%;
+}
+
+.pdfdoc .center {
+	margin-top: 4rem;
+}
+
+.pdfdoc .center h2,
+.pdfdoc .center h5 {
+	text-align: center;
+	font: bold;
+	font-weight: 600;
+}
+
+.pdfdoc #u {
+	font-size: 21px;
+	text-decoration: underline;
+}
+
+.pdfdoc #empty {
+	border-top: none;
+	border-bottom: none;
+}
+
+.pdfdoc p {
+	font-size: 16px;
+}
+
+.pdfdoc table {
+	width: 100%;
+	border: 1px solid black;
+}
+
+.pdfdoc th {
+	background-color: lightblue;
+	padding-left: 1rem;
+	border: 1px solid black;
+}
+
+.pdfdoc td {
+	padding: .8rem 1rem;
+	border: 1px solid black;
+}
+
+.pdfdoc #details {
+	background-color: lightgrey;
+	padding: 10rem;
+}
+
+.pdfdoc #column {
+	width: 9%;
+}
+
+.pdfdoc .none th {
+	background-color: white;
+}
+
+.pdfdoc #row {
+	background-color: lightgrey;
+}
+
+.pdfdoc .yellow td {
+	background-color: yellow;
+}
+
+.pdf Button {
+	margin-left: 45%;
+	margin-top: 1rem;
+	margin-bottom: 4rem;
+}
+
+.pdf Button: hover {
+	transform: 3px;
+}
+
+/**********MQ MEDIUM DEVICES********/
+
+
+@media screen and (max-width:  1023px) {
+	
+}
+
+
